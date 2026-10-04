@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#education -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaditya Mathur | B.Tech Student &amp; AI Learner | Portfolio</title>
+  
+  <!-- Meta & SEO Tags -->
+  <meta name="description" content="Personal portfolio of Aaditya Mathur, a B.Tech first-year student at JECRC University, Jaipur. Exploring Artificial Intelligence, Generative AI, Prompt Engineering, and Digital Productivity.">
+  <meta name="author" content="Aaditya Mathur">
+  <meta name="theme-color" content="#080b11">
+
+  <!-- Google Fonts: Space Grotesk (Tech Headings) & Plus Jakarta Sans (Readable UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/css2" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/style.css">
+</head>
+<body>
+
+  <!-- Interactive Drag Canvas: ODM Blade Slash & Sparks Trail -->
+  <canvas id="slash-canvas" width="1680" height="962"></canvas>
+
+  <!-- Ambient Tech Particles Canvas -->
+  <canvas id="ambient-canvas" width="1680" height="962"></canvas>
+
+  <!-- Tactical Grid Layer -->
+  <div class="grid-overlay"></div>
+
+  <!-- 1. Floating Glass Navbar -->
+  <header class="navbar" id="main-nav">
+    <div class="nav-inner">
+      <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#home" class="brand-logo" aria-label="Aaditya Mathur Home">
+        <div class="logo-symbol">AM</div>
+        <span>Aaditya Mathur</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#home" class="nav-link active">Home</a></li>
+          <li><a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#education" class="nav-link">Education</a></li>
+          <li><a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#skills-hobbies" class="nav-link">Skills &amp; Hobbies</a></li>
+          <li><a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-primary open-resume-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Resume</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#home">Home</a>
+      <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#education">Education</a>
+      <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#skills-hobbies">Skills &amp; Hobbies</a>
+      <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#contact">Contact</a>
+      <button type="button" class="btn-primary open-resume-btn" style="width: 100%; justify-content: center; margin-top: 8px;">
+        <span>View Resume</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section (Home) -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="status-pill">
+              <span class="pulse-dot"></span>
+              <span>Available for Projects &amp; Tech Collaborations</span>
+            </div>
+
+            <div>
+              <p class="hero-greeting">Welcome to my digital space</p>
+              <h1 class="hero-name">Hi, I'm <span class="text-gradient">Aaditya Mathur</span></h1>
+            </div>
+
+            <!-- Dynamic Tagline Typewriter -->
+            <div class="typewriter-wrapper" aria-label="Aaditya&#39;s Tagline">
+              <span class="typewriter-text" id="typewriter-text">Digital Pro</span>
+              <span class="cursor-blink"></span>
+            </div>
+
+            <p class="hero-bio">
+              I am a B.Tech first-year student at <strong>JECRC University, Jaipur</strong>. I am currently learning 
+              <strong>Artificial Intelligence</strong>, <strong>Generative AI</strong>, <strong>Prompt Engineering</strong>, 
+              and <strong>Digital Productivity</strong>. Driven by curiosity, I love exploring cutting-edge AI tools, 
+              automating workflows, and building future-ready tech skills.
+            </p>
+
+            <div class="hero-badges-row">
+              <div class="badge-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                <span>JECRC University</span>
+              </div>
+              <div class="badge-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>First Year B.Tech</span>
+              </div>
+              <div class="badge-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Jaipur, Rajasthan, India</span>
+              </div>
+            </div>
+
+            <div class="hero-cta-group">
+              <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#education" class="btn-primary">
+                <span>View My Portfolio</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+              </a>
+              <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/index.html#contact" class="btn-secondary">
+                <span>Get In Touch</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Avatar: Levi Ackerman Art with 3D Tilt & Tactical Radar Rings -->
+          <div class="hero-visual">
+            <div class="avatar-wrapper tilt-target" id="hero-avatar-wrapper" title="Drag to pull Levi Ackerman with elastic ODM recoil!" style="transform: perspective(1000px) rotateX(-10.2688deg) rotateY(-0.875914deg) scale3d(1.02, 1.02, 1.02);">
+              <div class="tactical-ring"></div>
+              <div class="tactical-ring-secondary"></div>
+              
+              <div class="avatar-image-container" id="hero-avatar-card" style="">
+                <img src="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/levi_avatar.jpg" alt="Aaditya Mathur Profile - Levi Ackerman Survey Corps Aesthetic" width="320" height="320" draggable="false">
+              </div>
+
+              <div class="scout-badge-floating">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Survey Corps Theme</span>
+              </div>
+
+              <div class="avatar-drag-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3"></path>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <span>Click &amp; Drag Levi</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Education Section -->
+    <section class="education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Academic Trajectory</div>
+          <h2 class="section-title">Education &amp; Foundations</h2>
+          <p class="section-subtitle">
+            My academic progression from school foundations to university engineering at JECRC University.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Card 1: B.Tech (Current) -->
+          <div class="timeline-card-wrapper">
+            <div class="timeline-dot active" title="Current Academic Pursuit"></div>
+            <div class="glass-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="card-header-flex">
+                <div>
+                  <h3 class="institution-name">JECRC University</h3>
+                  <div class="degree-title">Bachelor of Technology (B.Tech) — First Year</div>
+                </div>
+                <span class="status-tag status-active">Currently Pursuing</span>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>2024 – Present (First Year)</span>
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Jaipur, Rajasthan, India</span>
+                </span>
+              </div>
+
+              <p class="card-description">
+                Immersed in engineering principles, algorithmic problem solving, and emerging computer technologies. 
+                Actively learning Artificial Intelligence paradigms, Generative AI models, prompt engineering methods, 
+                and high-leverage digital productivity tools to build scalable, intelligent workflows.
+              </p>
+
+              <div class="highlights-container">
+                <span class="highlight-pill">Artificial Intelligence Foundations</span>
+                <span class="highlight-pill">Generative AI Exploration</span>
+                <span class="highlight-pill">Prompt Engineering</span>
+                <span class="highlight-pill">Digital Productivity</span>
+                <span class="highlight-pill">Problem Solving &amp; Logic</span>
+                <span class="highlight-pill">Web Fundamentals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Class XII -->
+          <div class="timeline-card-wrapper">
+            <div class="timeline-dot"></div>
+            <div class="glass-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="card-header-flex">
+                <div>
+                  <h3 class="institution-name">Senior Secondary Schooling</h3>
+                  <div class="degree-title">Higher Secondary Education (Class XII)</div>
+                </div>
+                <span class="status-tag status-completed">Completed</span>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                  <span>Science &amp; Mathematics Stream</span>
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Rajasthan, India</span>
+                </span>
+              </div>
+
+              <p class="card-description">
+                Developed rigorous analytical, mathematical, and logical problem-solving foundations. 
+                Fostered an early interest in computing architectures, technological innovations, and scientific inquiry.
+              </p>
+
+              <div class="highlights-container">
+                <span class="highlight-pill">Physics &amp; Chemistry</span>
+                <span class="highlight-pill">Mathematics &amp; Logic</span>
+                <span class="highlight-pill">Analytical Thinking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Class X -->
+          <div class="timeline-card-wrapper">
+            <div class="timeline-dot"></div>
+            <div class="glass-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="card-header-flex">
+                <div>
+                  <h3 class="institution-name">Secondary School Education</h3>
+                  <div class="degree-title">Secondary School Certificate (Class X)</div>
+                </div>
+                <span class="status-tag status-completed">Completed</span>
+              </div>
+
+              <div class="timeline-meta">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>Foundational Board Examination</span>
+                </span>
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Rajasthan, India</span>
+                </span>
+              </div>
+
+              <p class="card-description">
+                Achieved a comprehensive academic foundation with active participation in science exhibitions, 
+                collaborative school projects, and team competitions.
+              </p>
+
+              <div class="highlights-container">
+                <span class="highlight-pill">Academic Distinction</span>
+                <span class="highlight-pill">Science Exhibitions</span>
+                <span class="highlight-pill">Team Collaboration</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Combined Skills & Hobbies Section -->
+    <section class="skills-section" id="skills-hobbies">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Arsenal &amp; Interests</div>
+          <h2 class="section-title">Skills &amp; Hobbies</h2>
+          <p class="section-subtitle">
+            A combined nexus of technical competencies, modern AI tools, personal passions, and creative pursuits.
+          </p>
+        </div>
+
+        <!-- Controls: Filters & Interactive View Switcher -->
+        <div class="skills-controls">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-filter="all">All Items (17)</button>
+            <button class="filter-btn" data-filter="ai">AI &amp; Intelligence</button>
+            <button class="filter-btn" data-filter="engineering">Engineering &amp; Workflow</button>
+            <button class="filter-btn" data-filter="soft">Core &amp; Soft Skills</button>
+            <button class="filter-btn" data-filter="hobby">Hobbies &amp; Passions</button>
+          </div>
+
+          <div class="view-switcher">
+            <button class="view-btn active" id="view-grid-btn" title="Display as structured cards">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Grid Matrix</span>
+            </button>
+            <button class="view-btn" id="view-arena-btn" title="Switch to draggable zero-gravity physics sandbox">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+              <span>Zero-G Drag Arena</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- VIEW A: Structured Grid Matrix View -->
+        <div id="skills-grid-view" class="skills-grid">
+
+          <!-- 10 SKILLS -->
+          <div class="skill-card tilt-target" data-category="ai" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+            </div>
+            <div class="skill-category-badge">Artificial Intelligence</div>
+            <h3 class="skill-title">AI Fundamentals</h3>
+            <p class="skill-desc">Understanding core machine learning paradigms, neural network basics, data modeling, and algorithmic intelligence.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="ai" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"></path></svg>
+            </div>
+            <div class="skill-category-badge">Artificial Intelligence</div>
+            <h3 class="skill-title">Generative AI</h3>
+            <p class="skill-desc">Hands-on experimentation with Large Language Models (LLMs), multimodal foundation models, and AI automation.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="ai" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            </div>
+            <div class="skill-category-badge">Artificial Intelligence</div>
+            <h3 class="skill-title">Prompt Engineering</h3>
+            <p class="skill-desc">Crafting structured system prompts, few-shot prompting, persona steering, and chain-of-thought logic to maximize AI output.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="engineering" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <div class="skill-category-badge">Workflows &amp; Systems</div>
+            <h3 class="skill-title">Digital Productivity</h3>
+            <p class="skill-desc">Building streamlined personal workflows using AI tools, smart note-taking setups, shortcuts, and digital knowledge bases.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="soft" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+            </div>
+            <div class="skill-category-badge">Core Competency</div>
+            <h3 class="skill-title">Problem Solving</h3>
+            <p class="skill-desc">Analytical decomposition of complex engineering problems into clear, systematic, and solvable procedural components.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="soft">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="skill-category-badge">Soft Skills</div>
+            <h3 class="skill-title">Communication</h3>
+            <p class="skill-desc">Clear technical articulation, collaborative sharing of ideas, and concise documentation for teamwork and presentations.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="engineering" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="skill-category-badge">Engineering</div>
+            <h3 class="skill-title">Basic Web Development</h3>
+            <p class="skill-desc">Responsive layouts, modern semantic HTML5, CSS3, JavaScript DOM interactions, and sleek UI implementation.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="soft" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <div class="skill-category-badge">Core Competency</div>
+            <h3 class="skill-title">Research &amp; Info Analysis</h3>
+            <p class="skill-desc">Synthesizing tech documentation, evaluating new software benchmarks, and discerning signal from noise in tech trends.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="soft" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="skill-category-badge">Soft Skills</div>
+            <h3 class="skill-title">Teamwork</h3>
+            <p class="skill-desc">Cooperative project collaboration, peer learning, agile communication, and mutual accountability.</p>
+          </div>
+
+          <div class="skill-card tilt-target" data-category="soft">
+            <div class="card-top-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="skill-category-badge">Soft Skills</div>
+            <h3 class="skill-title">Time Management</h3>
+            <p class="skill-desc">Balancing rigorous university coursework with self-directed AI upskilling, personal projects, and deep work blocks.</p>
+          </div>
+
+          <!-- 7 HOBBIES -->
+          <div class="hobby-card tilt-target" data-category="hobby">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8.01" y2="16"></line><line x1="16" y1="16" x2="16.01" y2="16"></line></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Tech Passion</div>
+            <h3 class="skill-title">Exploring AI Tools</h3>
+            <p class="skill-desc">Constantly testing new autonomous agents, multimodal generative software, canvas tools, and automated pipelines.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Leisure &amp; Art</div>
+            <h3 class="skill-title">Watching Anime</h3>
+            <p class="skill-desc">Drawn to strategic masterpieces, tactical thinkers, and inspiring resilience — Attack on Titan &amp; Levi Ackerman.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Focus &amp; Rhythm</div>
+            <h3 class="skill-title">Listening to Music</h3>
+            <p class="skill-desc">Lo-Fi ambient soundscapes, synthwave beats, and cinematic anime orchestral tracks while studying and coding.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Visual Art</div>
+            <h3 class="skill-title">Photography</h3>
+            <p class="skill-desc">Capturing architectural geometry, dramatic lighting, urban streets of Jaipur, and aesthetic perspectives.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Leisure &amp; Tactics</div>
+            <h3 class="skill-title">Gaming</h3>
+            <p class="skill-desc">Tactical strategy games, immersive open-world environments, and fast reflex coordination.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Exploration</div>
+            <h3 class="skill-title">Learning New Technologies</h3>
+            <p class="skill-desc">Eagerly diving into new developer ecosystems, CLI utilities, SDKs, and open-source generative projects.</p>
+          </div>
+
+          <div class="hobby-card tilt-target" data-category="hobby" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+            <div class="card-top-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <div class="skill-category-badge" style="color: #34d399;">Knowledge</div>
+            <h3 class="skill-title">Reading about Technology</h3>
+            <p class="skill-desc">Keeping abreast of AI breakthrough research, future tech architecture articles, and developer insights.</p>
+          </div>
+
+        </div>
+
+        <!-- VIEW B: Interactive Zero-G Physics Drag Arena -->
+        <div id="skills-arena-view" class="arena-view hidden">
+          <div class="arena-controls">
+            <button class="btn-secondary" id="arena-scatter-btn" style="padding: 6px 14px; font-size: 0.82rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              <span>Zero-G Drift</span>
+            </button>
+            <button class="btn-primary" id="arena-reset-btn" style="padding: 6px 14px; font-size: 0.82rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+              <span>Assemble Grid</span>
+            </button>
+          </div>
+
+          <div class="arena-container" id="skills-arena-container" style="min-height: 420px;">
+            <!-- 10 Skills Draggable Badges -->
+            <div class="drag-badge" data-name="AI Fundamentals" style="position: absolute; left: 0px; top: 0px; transform: translate3d(20px, 20px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
+              <span>AI Fundamentals</span>
+            </div>
+
+            <div class="drag-badge" data-name="Generative AI" style="position: absolute; left: 0px; top: 0px; transform: translate3d(184px, 20px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"></path></svg>
+              <span>Generative AI</span>
+            </div>
+
+            <div class="drag-badge" data-name="Prompt Engineering" style="position: absolute; left: 0px; top: 0px; transform: translate3d(348px, 20px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>Prompt Engineering</span>
+            </div>
+
+            <div class="drag-badge" data-name="Digital Productivity" style="position: absolute; left: 0px; top: 0px; transform: translate3d(512px, 20px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>Digital Productivity</span>
+            </div>
+
+            <div class="drag-badge" data-name="Problem Solving" style="position: absolute; left: 0px; top: 0px; transform: translate3d(20px, 80px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line></svg>
+              <span>Problem Solving</span>
+            </div>
+
+            <div class="drag-badge" data-name="Communication" style="position: absolute; left: 0px; top: 0px; transform: translate3d(184px, 80px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Communication</span>
+            </div>
+
+            <div class="drag-badge" data-name="Basic Web Development" style="position: absolute; left: 0px; top: 0px; transform: translate3d(348px, 80px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span>Basic Web Development</span>
+            </div>
+
+            <div class="drag-badge" data-name="Research &amp; Info Analysis" style="position: absolute; left: 0px; top: 0px; transform: translate3d(512px, 80px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Research &amp; Analysis</span>
+            </div>
+
+            <div class="drag-badge" data-name="Teamwork" style="position: absolute; left: 0px; top: 0px; transform: translate3d(20px, 140px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+              <span>Teamwork</span>
+            </div>
+
+            <div class="drag-badge" data-name="Time Management" style="position: absolute; left: 0px; top: 0px; transform: translate3d(184px, 140px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Time Management</span>
+            </div>
+
+            <!-- 7 Hobbies Draggable Badges -->
+            <div class="drag-badge badge-hobby" data-name="Exploring AI Tools" style="position: absolute; left: 0px; top: 0px; transform: translate3d(348px, 140px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle></svg>
+              <span>Exploring AI Tools</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Watching Anime" style="position: absolute; left: 0px; top: 0px; transform: translate3d(512px, 140px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+              <span>Watching Anime</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Listening to Music" style="position: absolute; left: 0px; top: 0px; transform: translate3d(20px, 200px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+              <span>Listening to Music</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Photography" style="position: absolute; left: 0px; top: 0px; transform: translate3d(184px, 200px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <span>Photography</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Gaming" style="position: absolute; left: 0px; top: 0px; transform: translate3d(348px, 200px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+              <span>Gaming</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Learning New Technologies" style="position: absolute; left: 0px; top: 0px; transform: translate3d(512px, 200px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              <span>Learning New Tech</span>
+            </div>
+
+            <div class="drag-badge badge-hobby" data-name="Reading about Technology" style="position: absolute; left: 0px; top: 0px; transform: translate3d(20px, 260px, 0px) rotate(0deg);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Reading about Tech</span>
+            </div>
+          </div>
+
+          <div class="arena-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>Click &amp; drag any badge to toss it with physics inertia!</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Direct Transmission</div>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Interested in collaborating on AI projects, tech exploration, or simply want to talk technology? Reach out below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Direct Info -->
+          <div class="contact-info-panel">
+            
+            <div class="contact-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-card-content">
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value">aaditya.mathur@example.com</div>
+              </div>
+              <button type="button" class="copy-badge-btn" data-copy="aaditya.mathur@example.com" title="Copy email address">Copy</button>
+            </div>
+
+            <div class="contact-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-card-content">
+                <div class="contact-label">Phone Number</div>
+                <div class="contact-value">+91 98765 43210</div>
+              </div>
+              <button type="button" class="copy-badge-btn" data-copy="+91 98765 43210" title="Copy phone number">Copy</button>
+            </div>
+
+            <div class="contact-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-card-content">
+                <div class="contact-label">Location &amp; Local Time</div>
+                <div class="contact-value">Jaipur, Rajasthan, India</div>
+                <div style="font-size: 0.82rem; color: var(--accent-primary); margin-top: 4px;">
+                  Current Time: <span id="jaipur-time">08:48:04 AM (IST)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card tilt-target" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="contact-card-content">
+                <div class="contact-label">University</div>
+                <div class="contact-value">JECRC University, Jaipur</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-panel">
+            <form id="portfolio-contact-form" autocomplete="off">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe" required="">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. john@example.com" required="">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="Collaboration, Inquiry, or Tech Discussion">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Your Message</label>
+                <textarea id="contact-message" class="form-textarea" maxlength="500" placeholder="Type your message here..." required=""></textarea>
+                <div class="form-footer-flex">
+                  <span class="char-counter" id="char-count">0 / 500</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px 24px; font-size: 1rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div style="font-weight: 700; color: #ffffff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+          <span>Aaditya Mathur</span>
+          <span style="color: var(--accent-primary);">•</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">JECRC University</span>
+        </div>
+        <p style="font-size: 0.82rem;">Designed with a stealth Survey Corps aesthetic &amp; interactive drag physics.</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Twitter / X Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+        </a>
+        <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Discord Community">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Real-Time Drag Action HUD: Shows Live Actions When Dragging -->
+  <div class="drag-action-hud" id="drag-action-hud" aria-live="polite">
+    <div class="drag-hud-inner">
+      <div class="drag-hud-pulse"></div>
+      <div class="drag-hud-icon" id="drag-hud-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <div class="drag-hud-info">
+        <div class="drag-hud-action" id="drag-hud-action">ACTION: ODM BLADE SLASH</div>
+        <div class="drag-hud-sub" id="drag-hud-sub">Initializing Survey Corps Blade Cut...</div>
+      </div>
+      <div class="drag-hud-combo" id="drag-hud-combo" style="display: none;">
+        <span class="combo-num" id="drag-combo-val">2x</span>
+        <span class="combo-lbl">COMBO</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Floating Drag Slash HUD Toggle -->
+  <div class="slash-hud">
+    <button type="button" class="slash-toggle-btn" id="slash-mode-toggle" title="Toggle Drag Blade Slash Trail Effect">
+      <span class="slash-icon-dot"></span>
+      <span class="slash-status-text">Blade Slash: ON</span>
+    </button>
+  </div>
+
+  <!-- 8. Resume Modal Viewer / Download -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="modal-content">
+      <button class="modal-close-btn close-modal-btn" aria-label="Close modal">×</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="width: 52px; height: 52px; background: rgba(56, 189, 248, 0.1); border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent-primary); margin-bottom: 12px; border: 1px solid rgba(56, 189, 248, 0.3);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </div>
+        <h3 id="resume-modal-title" style="font-size: 1.5rem; margin-bottom: 8px;">Aaditya Mathur — Resume</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">B.Tech First Year Student @ JECRC University, Jaipur</p>
+      </div>
+
+      <div class="glass-card" style="padding: 20px; margin-bottom: 20px; font-size: 0.9rem; border-color: rgba(56, 189, 248, 0.2);">
+        <p style="margin-bottom: 8px; color: #ffffff;"><strong>Document Integration:</strong></p>
+        <p style="color: var(--text-muted); line-height: 1.6;">
+          To link your actual PDF resume, simply place your resume file as <code style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; color: var(--accent-primary);">assets/resume.pdf</code>. The download button will immediately open or download your latest file.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: flex-end;">
+        <button type="button" class="btn-secondary close-modal-btn">Close</button>
+        <a href="file:///Users/Deepakmathur/.gemini/antigravity/scratch/aaditya-portfolio/assets/resume.pdf" download="Aaditya_Mathur_Resume.pdf" class="btn-primary" id="download-resume-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/data.js"></script>
+  <script src="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/physics.js"></script>
+  <script src="./Aaditya Mathur _ B.Tech Student &amp; AI Learner _ Portfolio_files/main.js"></script>
+
+
+</body></html>
