@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaditya Mathur | B.Tech Student & AI Learner | Portfolio</title>
+  
+  <meta name="description" content="Personal portfolio of Aaditya Mathur — First-year B.Tech student at JECRC University, Jaipur, exploring Artificial Intelligence, Generative AI, and modern technologies.">
+  <meta name="author" content="Aaditya Mathur">
+  <meta name="theme-color" content="#080b11">
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#080b11] text-slate-200 antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress-bar" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Custom Inertia Cursor (Desktop Only) -->
+  <div id="custom-cursor-dot" class="cursor-dot hidden md:block" aria-hidden="true"></div>
+  <div id="custom-cursor-ring" class="cursor-ring hidden md:block" aria-hidden="true"></div>
+
+  <!-- Background Ambient Glow & Tactical Grid Layer -->
+  <div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+    <div class="absolute -top-40 left-1/4 w-96 h-96 bg-blue-900/15 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/2 -right-20 w-80 h-80 bg-sky-600/10 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-indigo-950/20 rounded-full blur-[140px]"></div>
+    <div class="tactical-grid-overlay"></div>
+  </div>
+
+  <!-- Blade Trail Canvas (Subtle AoT Interaction for Draggables) -->
+  <canvas id="trail-canvas" class="fixed inset-0 pointer-events-none z-20" aria-hidden="true"></canvas>
+
+  <!-- 00. Cinematic Quick Intro (<1.5s on initial load) -->
+  <div id="cinematic-intro" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#080b11] text-white transition-opacity duration-500">
+    <div class="relative flex flex-col items-center max-w-md px-6 text-center">
+      <!-- Tactical Survey Grid Accent -->
+      <div class="intro-corner top-left"></div>
+      <div class="intro-corner top-right"></div>
+      <div class="intro-corner bottom-left"></div>
+      <div class="intro-corner bottom-right"></div>
+
+      <div class="text-[11px] font-mono tracking-[0.3em] text-blue-400 mb-2 uppercase flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+        INITIALIZING PORTFOLIO PROTOCOL
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-white mb-2 intro-title">
+        AADITYA MATHUR
+      </h1>
+      <p class="text-xs sm:text-sm font-mono text-slate-400 mb-6 tracking-wide intro-tagline">
+        B.Tech Student • AI Learner • Future Tech Enthusiast
+      </p>
+      <div class="w-48 h-1 bg-slate-800 rounded-full overflow-hidden mb-6">
+        <div class="h-full bg-gradient-to-r from-blue-500 to-sky-400 intro-loader-bar"></div>
+      </div>
+      <button id="skip-intro-btn" type="button" class="text-[11px] font-mono text-slate-500 hover:text-slate-300 transition-colors uppercase tracking-widest px-3 py-1 border border-slate-800 hover:border-slate-700 rounded-md">
+        Press [ESC] or Click to Skip
+      </button>
+    </div>
+  </div>
+
+  <!-- 01. Sticky Glassmorphism Navigation Bar -->
+  <header id="main-nav" class="sticky top-0 z-40 w-full transition-all duration-300 py-3 backdrop-blur-md bg-[#080b11]/80 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group" aria-label="Aaditya Mathur Home">
+        <div class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center font-mono font-bold text-sm text-blue-400 group-hover:border-blue-500/80 group-hover:shadow-[0_0_12px_rgba(56,189,248,0.3)] transition-all">
+          AM
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold tracking-tight text-base text-white group-hover:text-blue-400 transition-colors">
+            AADITYA<span class="text-blue-500">.</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Status Indicator Pill -->
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="tracking-wider uppercase">AVAILABLE TO LEARN</span>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-mono text-xs tracking-wider" aria-label="Main Navigation">
+        <a href="#home" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="home">HOME</a>
+        <a href="#about" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="about">ABOUT</a>
+        <a href="#education" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="education">EDUCATION</a>
+        <a href="#skills-hobbies" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="skills-hobbies">SKILLS</a>
+        <a href="#mission" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="mission">MISSION</a>
+        <a href="#contact" class="nav-link px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition-colors" data-section="contact">CONTACT</a>
+      </nav>
+
+      <!-- Right CTAs & Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Social Profiles Quick Links -->
+        <div class="hidden sm:flex items-center gap-1.5 border-r border-slate-800 pr-3 mr-0.5">
+          <a href="https://github.com/aadityamathur23-sketch" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all" title="Aaditya Mathur on GitHub" aria-label="GitHub Profile">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/aaditya-mathur-6a6b90411/" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all" title="Aaditya Mathur on LinkedIn" aria-label="LinkedIn Profile">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium text-white bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 hover:border-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+          <span>CONNECT</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white bg-slate-900 border border-slate-800 focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-5 border-b border-slate-800/90 bg-[#080b11]/95 backdrop-blur-xl">
+      <div class="flex flex-col space-y-2 font-mono text-sm">
+        <a href="#home" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">HOME</a>
+        <a href="#about" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">ABOUT</a>
+        <a href="#education" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">EDUCATION</a>
+        <a href="#skills-hobbies" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">SKILLS & HOBBIES</a>
+        <a href="#mission" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">CURRENT MISSION</a>
+        <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-md text-slate-300 hover:bg-slate-900">CONTACT</a>
+        <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+          <span>STATUS</span>
+          <span class="text-emerald-400 font-bold">● AVAILABLE TO LEARN</span>
+        </div>
+        <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400">PROFILES</span>
+          <div class="flex items-center gap-3">
+            <a href="https://github.com/aadityamathur23-sketch" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/aaditya-mathur-6a6b90411/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- 02. HERO SECTION -->
+    <section id="home" class="relative min-h-[calc(100vh-65px)] flex items-center justify-center py-12 lg:py-20 overflow-hidden">
+      
+      <!-- Interactive Draggable Chips Boundary Box -->
+      <div id="drag-container" class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Left Column: Bio & CTAs -->
+          <div class="lg:col-span-7 flex flex-col items-start z-10">
+            
+            <!-- Tactical Coordinate & College Pill -->
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700/60 text-xs font-mono text-slate-300 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>JECRC UNIVERSITY, JAIPUR</span>
+              </div>
+              <div class="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-950/40 border border-blue-800/40 text-[11px] font-mono text-blue-300">
+                <span>FIRST YEAR B.TECH</span>
+              </div>
+            </div>
+
+            <!-- Large Heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
+              Aaditya Mathur
+            </h1>
+
+            <!-- Tagline -->
+            <div class="text-lg sm:text-xl font-medium font-mono text-blue-400 mb-6 flex items-center gap-2 flex-wrap">
+              <span>B.Tech Student</span>
+              <span class="text-slate-600">|</span>
+              <span>AI Learner</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-sky-300">Future Tech Enthusiast</span>
+            </div>
+
+            <!-- Introduction Paragraph -->
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-light">
+              I'm a first-year B.Tech student at <strong>JECRC University, Jaipur</strong>, exploring 
+              <span class="text-white font-medium">Artificial Intelligence</span>, 
+              <span class="text-white font-medium">Generative AI</span>, 
+              <span class="text-white font-medium">Prompt Engineering</span>, and digital productivity while building my foundational skills for the future of technology.
+            </p>
+
+            <!-- CTA Buttons & Social Profiles (Magnetic Hover Enabled) -->
+            <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <a href="#skills-hobbies" class="magnetic-btn group relative inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-[0_0_25px_rgba(37,99,235,0.35)] transition-all overflow-hidden">
+                <span class="relative z-10">View My Portfolio</span>
+                <svg class="relative z-10 w-4 h-4 group-hover:translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </a>
+
+              <a href="#about" class="magnetic-btn group inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-mono text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-500 transition-all">
+                <span>Explore Journey</span>
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- GitHub & LinkedIn Quick CTAs -->
+              <div class="flex items-center gap-2.5">
+                <a href="https://github.com/aadityamathur23-sketch" target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-mono text-xs sm:text-sm text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-blue-500/60 transition-all shadow-sm group" title="Visit Aaditya's GitHub Profile" aria-label="GitHub Profile">
+                  <svg class="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/aaditya-mathur-6a6b90411/" target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-mono text-xs sm:text-sm text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-blue-500/60 transition-all shadow-sm group" title="Visit Aaditya's LinkedIn Profile" aria-label="LinkedIn Profile">
+                  <svg class="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Subtle Interaction Hint -->
+            <div class="mt-8 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <svg class="w-4 h-4 text-blue-400/80 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+              <span>TIP: The skill chips around the profile are draggable with realistic spring physics!</span>
+            </div>
+          </div>
+
+          <!-- Hero Right Column: Levi Profile Visual & Draggable Elements -->
+          <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[420px]">
+            
+            <!-- Draggable Floating Skill Chips Area (5 Chips) -->
+            <div id="chip-ai" class="draggable-chip absolute top-4 left-0 sm:left-4 z-30 cursor-grab active:cursor-grabbing select-none" data-chip="AI" title="Drag me!">
+              <div class="chip-inner px-3.5 py-1.5 rounded-lg bg-slate-900/90 border border-blue-500/50 text-blue-400 font-mono text-xs font-semibold shadow-[0_0_15px_rgba(59,130,246,0.25)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                <span>AI</span>
+              </div>
+            </div>
+
+            <div id="chip-genai" class="draggable-chip absolute top-2 right-2 sm:right-6 z-30 cursor-grab active:cursor-grabbing select-none" data-chip="GEN AI" title="Drag me!">
+              <div class="chip-inner px-3 py-1.5 rounded-lg bg-slate-900/90 border border-cyan-500/50 text-cyan-400 font-mono text-xs font-semibold shadow-[0_0_15px_rgba(6,182,212,0.25)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span>GEN AI</span>
+              </div>
+            </div>
+
+            <div id="chip-prompt" class="draggable-chip absolute top-1/2 -left-4 sm:left-0 z-30 cursor-grab active:cursor-grabbing select-none" data-chip="PROMPTING" title="Drag me!">
+              <div class="chip-inner px-3 py-1.5 rounded-lg bg-slate-900/90 border border-sky-500/50 text-sky-300 font-mono text-xs font-semibold shadow-[0_0_15px_rgba(56,189,248,0.25)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                <span>PROMPTING</span>
+              </div>
+            </div>
+
+            <div id="chip-prod" class="draggable-chip absolute top-1/2 -right-4 sm:right-0 z-30 cursor-grab active:cursor-grabbing select-none" data-chip="PRODUCTIVITY" title="Drag me!">
+              <div class="chip-inner px-3 py-1.5 rounded-lg bg-slate-900/90 border border-indigo-500/50 text-indigo-300 font-mono text-xs font-semibold shadow-[0_0_15px_rgba(99,102,241,0.25)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                <span>PRODUCTIVITY</span>
+              </div>
+            </div>
+
+            <div id="chip-tech" class="draggable-chip absolute bottom-4 left-1/4 z-30 cursor-grab active:cursor-grabbing select-none" data-chip="TECH" title="Drag me!">
+              <div class="chip-inner px-3 py-1.5 rounded-lg bg-slate-900/90 border border-emerald-500/50 text-emerald-400 font-mono text-xs font-semibold shadow-[0_0_15px_rgba(16,185,129,0.25)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>TECH</span>
+              </div>
+            </div>
+
+            <!-- Profile Drop Target & Levi Ackerman Tactical HUD Card -->
+            <div id="profile-drop-zone" class="profile-card-wrapper relative z-20 group p-4">
+              
+              <!-- Tactical HUD HUD Frame Brackets -->
+              <div class="tactical-bracket tl" aria-hidden="true"></div>
+              <div class="tactical-bracket tr" aria-hidden="true"></div>
+              <div class="tactical-bracket bl" aria-hidden="true"></div>
+              <div class="tactical-bracket br" aria-hidden="true"></div>
+
+              <!-- Rotating Radar Scanner Lines -->
+              <div class="radar-circle-outer" aria-hidden="true"></div>
+              <div class="radar-circle-inner" aria-hidden="true"></div>
+              <div class="radar-sweep" aria-hidden="true"></div>
+
+              <!-- Technical Labels Surrounding Profile (Animating subtly) -->
+              <div class="hud-tag top-left font-mono text-[10px] tracking-widest text-blue-400 bg-[#080b11]/90 px-2 py-0.5 rounded border border-blue-900/60 shadow">
+                [AI LEARNER]
+              </div>
+              <div class="hud-tag top-right font-mono text-[10px] tracking-widest text-slate-400 bg-[#080b11]/90 px-2 py-0.5 rounded border border-slate-800 shadow">
+                [JECRC UNIVERSITY]
+              </div>
+              <div class="hud-tag bottom-left font-mono text-[10px] tracking-widest text-slate-400 bg-[#080b11]/90 px-2 py-0.5 rounded border border-slate-800 shadow">
+                [JAIPUR / IN]
+              </div>
+              <div class="hud-tag bottom-right font-mono text-[10px] tracking-widest text-sky-400 bg-[#080b11]/90 px-2 py-0.5 rounded border border-sky-900/60 shadow">
+                [01 / STUDENT]
+              </div>
+
+              <!-- Profile Rounded Container with Levi Visual -->
+              <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-b from-blue-500/20 via-slate-800/40 to-blue-900/30 border border-blue-500/30 shadow-[0_0_40px_rgba(37,99,235,0.25)] backdrop-blur-sm overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:border-blue-400 group-hover:shadow-[0_0_60px_rgba(56,189,248,0.4)]">
+                
+                <!-- Inner Animated Scanning Line -->
+                <div class="scanner-bar" aria-hidden="true"></div>
+
+                <img 
+                  id="profile-img"
+                  src="assets/images/levi_avatar.jpg" 
+                  alt="Aaditya Mathur Portfolio Visual - Levi Ackerman Aesthetic" 
+                  class="w-full h-full object-cover rounded-full filter contrast-105 brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out select-none pointer-events-none"
+                  loading="eager"
+                />
+
+                <!-- Dark Glass Vignette Overlay -->
+                <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+              </div>
+
+              <!-- Magnetic Drop Indicator Alert (Shows when dragging chip near profile) -->
+              <div id="drop-indicator" class="opacity-0 transition-opacity duration-300 absolute inset-0 rounded-full border-2 border-dashed border-blue-400 bg-blue-500/10 pointer-events-none flex items-center justify-center">
+                <span class="px-3 py-1 bg-blue-950/90 rounded text-blue-300 font-mono text-xs font-semibold tracking-wider">
+                  RELEASE TO SNAP
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll to explore hint -->
+      <a href="#about" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 hover:text-slate-300 transition-colors font-mono text-[11px] tracking-widest" aria-label="Scroll down to explore about me">
+        <span>SCROLL TO EXPLORE</span>
+        <svg class="w-4 h-4 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+      </a>
+    </section>
+
+    <!-- 03. SECTION 01 — ABOUT ME -->
+    <section id="about" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Tag -->
+        <div class="flex items-center gap-2 font-mono text-xs text-blue-400 mb-3 tracking-widest uppercase">
+          <span class="w-6 h-[1px] bg-blue-500"></span>
+          <span>01 — ABOUT ME</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left: Introduction -->
+          <div class="lg:col-span-6 space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              Disciplined Curiosity Meets Emerging Technology
+            </h2>
+            
+            <p class="text-slate-300 text-base leading-relaxed font-light">
+              I am a first-year B.Tech undergraduate at <strong>JECRC University in Jaipur</strong>. Rather than claiming years of professional engineering or fabricated senior credentials, my focus is rooted in disciplined curiosity: studying computing fundamentals, exploring modern AI systems, and building practical digital workflows that yield compounding learning benefits.
+            </p>
+
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Inspired by the precision, vigilance, and composure exemplified by figures like Levi Ackerman in Attack on Titan, I approach programming and technology with deliberate practice: understanding core principles before jumping into tools, and prioritizing clean, scalable problem-solving.
+            </p>
+
+            <!-- Learning Journey Stats (Strictly non-falsified representations of learning state) -->
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-2xl sm:text-3xl font-bold font-mono text-white">01</div>
+                <div class="text-xs font-mono text-blue-400 font-semibold mt-0.5">YEAR</div>
+                <div class="text-[11px] text-slate-500 mt-1">B.Tech First Year</div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-2xl sm:text-3xl font-bold font-mono text-white">04+</div>
+                <div class="text-xs font-mono text-sky-400 font-semibold mt-0.5">LEARNING AREAS</div>
+                <div class="text-[11px] text-slate-500 mt-1">AI, GenAI, Prompts, Tools</div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="text-2xl sm:text-3xl font-bold font-mono text-white">∞</div>
+                <div class="text-xs font-mono text-emerald-400 font-semibold mt-0.5">CURIOSITY</div>
+                <div class="text-[11px] text-slate-500 mt-1">Daily Drive to Learn</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Glassmorphism "CURRENTLY EXPLORING" Card -->
+          <div class="lg:col-span-6">
+            <div class="relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-blue-950/20 border border-slate-700/60 shadow-xl backdrop-blur-md">
+              
+              <!-- Card Header -->
+              <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-ping"></div>
+                  <h3 class="font-mono text-sm font-bold text-white tracking-wider uppercase">
+                    CURRENTLY EXPLORING
+                  </h3>
+                </div>
+                <span class="font-mono text-[11px] text-slate-400">STATUS // ACTIVE FOCUS</span>
+              </div>
+
+              <!-- Exploring Items List with Animated Connection Effect -->
+              <div class="space-y-4">
+                
+                <div class="group p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-blue-500/60 transition-all flex items-start gap-4">
+                  <div class="p-2.5 rounded-lg bg-blue-950/60 text-blue-400 border border-blue-900/50 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-white text-sm">Artificial Intelligence</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-900/60">CORE</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">
+                      Fundamentals of machine learning, logic, and intelligent data systems.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="group p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/60 transition-all flex items-start gap-4">
+                  <div class="p-2.5 rounded-lg bg-cyan-950/60 text-cyan-400 border border-cyan-900/50 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-white text-sm">Generative AI</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-900/60">ACTIVE</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">
+                      Diffusion models, transformer architectures, and generative tooling.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="group p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-sky-500/60 transition-all flex items-start gap-4">
+                  <div class="p-2.5 rounded-lg bg-sky-950/60 text-sky-400 border border-sky-900/50 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-white text-sm">Prompt Engineering</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-900/60">PRACTICAL</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">
+                      Structured reasoning, few-shot prompting, and chain-of-thought methodologies.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="group p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-indigo-500/60 transition-all flex items-start gap-4">
+                  <div class="p-2.5 rounded-lg bg-indigo-950/60 text-indigo-400 border border-indigo-900/50 group-hover:scale-110 transition-transform">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-white text-sm">Digital Productivity</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-900/60">SYSTEMS</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-1">
+                      High-leverage developer workflows, automation, and structured knowledge management.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. SECTION 02 — EDUCATION -->
+    <section id="education" class="py-24 border-t border-slate-800/80 bg-gradient-to-b from-transparent via-slate-950/50 to-transparent relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <div class="flex items-center gap-2 font-mono text-xs text-blue-400 mb-3 tracking-widest uppercase">
+            <span class="w-6 h-[1px] bg-blue-500"></span>
+            <span>02 — EDUCATION</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+            Academic Trajectory & Foundational Studies
+          </h2>
+          <p class="text-slate-400 text-base">
+            My ongoing undergraduate engineering pathway at JECRC University, Jaipur, alongside foundational schooling.
+          </p>
+        </div>
+
+        <!-- Interactive Timeline -->
+        <div class="relative pl-6 sm:pl-10 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-blue-800/60 before:to-slate-800">
+          
+          <!-- Node 1: JECRC University (Active / Current) -->
+          <div class="relative group">
+            <!-- Glowing Timeline Node -->
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-blue-400 flex items-center justify-center shadow-[0_0_12px_rgba(59,130,246,0.6)]">
+              <div class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></div>
+            </div>
+
+            <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/70 border border-blue-500/40 hover:border-blue-400/70 shadow-lg backdrop-blur-sm transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <div>
+                  <span class="text-xs font-mono text-blue-400 uppercase tracking-wider">UNDERGRADUATE STUDIES</span>
+                  <h3 class="text-2xl font-bold text-white mt-0.5">JECRC University</h3>
+                  <div class="text-sm font-medium text-slate-300">Bachelor of Technology (B.Tech) — First Year</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/50 shadow-[0_0_10px_rgba(59,130,246,0.3)] flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span>CURRENT</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Location & Year Meta -->
+              <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 mb-5">
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Jaipur, Rajasthan, India</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>First Year (2024 – Present)</span>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Engaged in first-year engineering coursework, focusing on computing fundamentals, problem-solving, and expanding practical knowledge in artificial intelligence and modern web technologies.
+              </p>
+
+              <!-- Highlights / Focus Areas -->
+              <div>
+                <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-2.5">Key Focus Areas</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Artificial Intelligence Foundations</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Generative AI & LLM Exploration</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Prompt Engineering Strategies</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Digital Productivity & Tooling</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Foundational Web Technologies</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Algorithmic Thinking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 2: School Education Placeholder (Strict Zero-Falsification Compliance) -->
+          <div class="relative group">
+            <!-- Timeline Node -->
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center">
+              <div class="w-1.5 h-1.5 rounded-full bg-slate-500"></div>
+            </div>
+
+            <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 shadow-md backdrop-blur-sm transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">FOUNDATIONAL EDUCATION</span>
+                  <h3 class="text-xl font-bold text-white mt-0.5">School Education</h3>
+                  <div class="text-sm text-slate-400">Secondary & Higher Secondary Education</div>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-slate-800 text-slate-400 border border-slate-700">
+                  DETAILS PENDING
+                </span>
+              </div>
+
+              <!-- Placeholder Notice Box -->
+              <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/90 text-sm text-slate-300 leading-relaxed my-4 flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <div>
+                  <p class="font-medium text-white">School education details coming soon.</p>
+                  <p class="text-xs text-slate-400 mt-1">
+                    To maintain strict authenticity, no placeholder school names or grades are fabricated. You can update your high school details anytime in <code class="text-blue-300">js/data.js</code>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/50 text-slate-400 border border-slate-800">Science & Mathematics Foundation</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/50 text-slate-400 border border-slate-800">Logical Reasoning</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/50 text-slate-400 border border-slate-800">Academic Curiosity</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05. SECTION 03 — SKILLS & INTERESTS -->
+    <section id="skills-hobbies" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <div class="flex items-center gap-2 font-mono text-xs text-blue-400 mb-3 tracking-widest uppercase">
+            <span class="w-6 h-[1px] bg-blue-500"></span>
+            <span>03 — SKILLS & INTERESTS</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+            Interactive Learning Matrix & Hobbies
+          </h2>
+          <p class="text-slate-400 text-base">
+            Click on any skill card below to view my educational exploration notes and how I apply these concepts in my studies.
+          </p>
+        </div>
+
+        <!-- SUBSECTION A: SKILLS MATRIX (10 Interactive Cards) -->
+        <div class="mb-20">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold text-white font-mono flex items-center gap-2">
+              <span class="text-blue-400">#</span> CORE SKILLS & LEARNING AREAS
+            </h3>
+            <span class="text-xs font-mono text-slate-500">CLICK CARD FOR DETAILS</span>
+          </div>
+
+          <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <!-- 1. AI Fundamentals -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" data-skill-id="ai-fundamentals">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-blue-950/60 border border-blue-900/60 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-blue-400 px-1.5 py-0.5 rounded bg-blue-950 border border-blue-900/40">AI</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">AI Fundamentals</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Basic principles of how machines process data and recognize patterns.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 2. Generative AI -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/60 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]" data-skill-id="generative-ai">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-cyan-950/60 border border-cyan-900/60 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-cyan-400 px-1.5 py-0.5 rounded bg-cyan-950 border border-cyan-900/40">GEN AI</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition-colors">Generative AI</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Exploring modern generative models and multimodal AI workflows.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 3. Prompt Engineering -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-sky-500/60 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]" data-skill-id="prompt-engineering">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-sky-950/60 border border-sky-900/60 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-sky-400 px-1.5 py-0.5 rounded bg-sky-950 border border-sky-900/40">PROMPT</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-sky-300 transition-colors">Prompt Engineering</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Structured system prompting, few-shot prompting, and chain-of-thought.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 4. Digital Productivity -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-indigo-500/60 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]" data-skill-id="digital-productivity">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-indigo-950/60 border border-indigo-900/60 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-indigo-400 px-1.5 py-0.5 rounded bg-indigo-950 border border-indigo-900/40">TOOLS</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition-colors">Digital Productivity</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Leveraging digital workflows, markdown notes, and automation tools.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 5. Problem Solving -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="problem-solving">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">LOGIC</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Problem Solving</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Breaking complex questions into logical, manageable steps.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 6. Communication -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="communication">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">TEAM</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Communication</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Articulating technical thoughts clearly with peers and collaborators.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 7. Basic Web Development -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="basic-web-dev">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">WEB</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Basic Web Dev</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">HTML5, CSS3, modern JavaScript, and responsive UI foundations.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 8. Research & Information Analysis -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="research-analysis">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">RESEARCH</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Research & Analysis</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Evaluating tech documentation, research summaries, and emerging tools.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 9. Teamwork -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="teamwork">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">SYNC</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Teamwork</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Collaborating on college initiatives, group projects, and discussions.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+            <!-- 10. Time Management -->
+            <div class="skill-card cursor-pointer group p-5 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-blue-500/60 transition-all duration-300 shadow-sm" data-skill-id="time-management">
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">HABITS</span>
+              </div>
+              <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition-colors">Time Management</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Balancing first-year university academics with self-guided tech exploration.</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                <span>View Notes</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SUBSECTION B: HORIZONTAL INTERACTIVE HOBBY STRIP (3D Tilt Cards) -->
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-bold text-white font-mono flex items-center gap-2">
+              <span class="text-blue-400">#</span> PERSONAL HOBBIES & CREATIVE PURSUITS
+            </h3>
+            <span class="text-xs font-mono text-slate-500">INTERACTIVE 3D TILT</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+            
+            <!-- 1. Exploring AI Tools -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-blue-950/80 border border-blue-900/50 flex items-center justify-center text-blue-400 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Exploring AI Tools</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Testing novel AI models, agentic workflows, and creative tooling as they release.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-blue-400/80">#EXPERIMENT</span>
+            </div>
+
+            <!-- 2. Watching Anime (Subtle AoT visual accent) -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-400/50 transition-all flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-16 h-16 bg-blue-500/5 rounded-full blur-xl pointer-events-none"></div>
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-blue-950/80 border border-blue-900/50 flex items-center justify-center text-blue-300 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Watching Anime</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Appreciating tactical depth, storytelling, and animation (Attack on Titan fan).</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-sky-400/80">#SURVEY_CORPS</span>
+            </div>
+
+            <!-- 3. Listening to Music -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-indigo-950/80 border border-indigo-900/50 flex items-center justify-center text-indigo-400 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Listening to Music</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Instrumental scores and focus tracks that power deep coding sessions.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-indigo-400/80">#DEEP_WORK</span>
+            </div>
+
+            <!-- 4. Photography (Camera-inspired treatment) -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-cyan-950/80 border border-cyan-900/50 flex items-center justify-center text-cyan-400 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Photography</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Capturing architectural geometry, shadow angles, and everyday scenes.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-cyan-400/80">#PERSPECTIVE</span>
+            </div>
+
+            <!-- 5. Gaming (Tactical controller treatment) -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-blue-950/80 border border-blue-900/50 flex items-center justify-center text-blue-400 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Gaming</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Strategy games testing spatial awareness, reflexes, and tactics.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-blue-400/80">#STRATEGY</span>
+            </div>
+
+            <!-- 6. Learning New Tech -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-sky-950/80 border border-sky-900/50 flex items-center justify-center text-sky-400 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">New Tech</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Seeking open-source developer tools, CLI utilities, and frameworks.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-sky-400/80">#DISCOVERY</span>
+            </div>
+
+            <!-- 7. Reading Tech -->
+            <div class="hobby-card tilt-target p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-600 transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 mb-3">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-white text-sm">Reading Tech</h4>
+                <p class="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Tech blogs, engineering postmortems, and emerging AI trends.</p>
+              </div>
+              <span class="mt-4 text-[10px] font-mono text-slate-400">#KNOWLEDGE</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06. SECTION 04 — CURRENT MISSION (4 CONNECTED NODES) -->
+    <section id="mission" class="py-24 border-t border-slate-800/80 bg-slate-950/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <div class="flex items-center gap-2 font-mono text-xs text-blue-400 mb-3 tracking-widest uppercase">
+            <span class="w-6 h-[1px] bg-blue-500"></span>
+            <span>04 — CURRENT MISSION</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+            LEARNING → EXPERIMENTING → BUILDING → IMPROVING
+          </h2>
+          <p class="text-slate-400 text-base">
+            This cyclical roadmap captures how I approach my first year of computer science engineering — continuous iteration without shortcuts.
+          </p>
+        </div>
+
+        <!-- Connected 4 Nodes Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          
+          <!-- Connecting Line (Desktop) -->
+          <div class="hidden lg:block absolute top-1/2 left-10 right-10 h-0.5 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400 -translate-y-12 z-0 opacity-40" aria-hidden="true"></div>
+
+          <!-- Node 1: LEARNING -->
+          <div class="relative z-10 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/60 shadow-lg backdrop-blur-md transition-all group">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-black font-mono text-blue-400">01</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-900">ACTIVE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">LEARNING</h3>
+            <p class="text-xs font-semibold text-blue-400/90 mb-3">Understanding AI and emerging technologies.</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Grasping mathematical foundations, Python syntax, core machine learning paradigms, and computer science fundamentals at JECRC University.
+            </p>
+          </div>
+
+          <!-- Node 2: EXPERIMENTING -->
+          <div class="relative z-10 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/60 shadow-lg backdrop-blur-md transition-all group">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-black font-mono text-cyan-400">02</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-900">ACTIVE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">EXPERIMENTING</h3>
+            <p class="text-xs font-semibold text-cyan-400/90 mb-3">Trying AI tools, prompts, and productivity workflows.</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Pushing the limits of modern generative models, testing reasoning chains, and benchmarking digital productivity setups for maximum leverage.
+            </p>
+          </div>
+
+          <!-- Node 3: BUILDING -->
+          <div class="relative z-10 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/60 shadow-lg backdrop-blur-md transition-all group">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-black font-mono text-sky-400">03</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-950 text-sky-300 border border-sky-900">IN PROGRESS</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">BUILDING</h3>
+            <p class="text-xs font-semibold text-sky-400/90 mb-3">Applying knowledge through small projects and web experiments.</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Translating concepts into responsive web interfaces, interactive components, and utility scripts that solve everyday student and workflow problems.
+            </p>
+          </div>
+
+          <!-- Node 4: IMPROVING -->
+          <div class="relative z-10 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/60 shadow-lg backdrop-blur-md transition-all group">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl font-black font-mono text-emerald-400">04</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-900">CONTINUOUS</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">IMPROVING</h3>
+            <p class="text-xs font-semibold text-emerald-400/90 mb-3">Continuously developing technical and communication skills.</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Seeking feedback from mentors and peers, refining communication clarity, writing clean documentation, and preparing for future engineering opportunities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 07. INTERACTIVE TERMINAL COMPONENT (AADITYA_TERMINAL) -->
+    <section class="py-20 border-t border-slate-800/80 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-10">
+          <span class="text-xs font-mono text-blue-400 tracking-widest uppercase block mb-2">CLI EMULATOR</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white font-mono">AADITYA_TERMINAL</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1">Interact with my portfolio directly through an in-browser console.</p>
+        </div>
+
+        <!-- Terminal Window Frame -->
+        <div class="rounded-2xl bg-[#090d16] border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs">
+          
+          <!-- Terminal Title Bar -->
+          <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between select-none">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-400 transition-colors"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-400 transition-colors"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500/80 hover:bg-emerald-400 transition-colors"></div>
+              <span class="ml-2 text-slate-400 text-[11px] font-semibold">aaditya@jecrc-survey-node:~</span>
+            </div>
+            <span class="text-[10px] text-slate-500">BASH 5.2</span>
+          </div>
+
+          <!-- Terminal Log Body -->
+          <div id="terminal-body" class="p-5 space-y-3 min-h-[260px] max-h-[380px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700">
+            <div class="text-blue-400/90">SYSTEM BOOT // AADITYA_TERMINAL v1.0.4</div>
+            <div class="text-slate-400">CONNECTED TO SURVEY_CORPS_NODE [JAIPUR_IN]</div>
+            <div class="text-slate-500 text-[11px]">Type a command or click a quick tag below to inspect profile.</div>
+            
+            <div class="pt-2 text-slate-300">
+              <span class="text-emerald-400">whoami:</span> Aaditya Mathur<br>
+              <span class="text-emerald-400">focus:</span> Artificial Intelligence + Technology<br>
+              <span class="text-emerald-400">current_status:</span> Learning & Building<br>
+              <span class="text-emerald-400">location:</span> Jaipur, Rajasthan, India
+            </div>
+
+            <!-- Dynamic Outputs Will Be Injected Here -->
+            <div id="terminal-output-stream" class="space-y-2 pt-1"></div>
+          </div>
+
+          <!-- Terminal Quick Action Command Buttons -->
+          <div class="px-4 py-2.5 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
+            <span class="text-[11px] text-slate-500">QUICK:</span>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-slate-700 hover:border-blue-500 text-[11px] transition-all" data-cmd="about">[about]</button>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-slate-700 hover:border-blue-500 text-[11px] transition-all" data-cmd="skills">[skills]</button>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-slate-700 hover:border-blue-500 text-[11px] transition-all" data-cmd="education">[education]</button>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-slate-700 hover:border-blue-500 text-[11px] transition-all" data-cmd="mission">[mission]</button>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-slate-700 hover:border-blue-500 text-[11px] transition-all" data-cmd="contact">[contact]</button>
+            <button type="button" class="term-btn px-2.5 py-1 rounded bg-slate-800 hover:bg-red-600/30 text-red-300 hover:text-white border border-slate-700 hover:border-red-500 text-[11px] transition-all ml-auto" data-cmd="clear">[clear]</button>
+          </div>
+
+          <!-- Terminal Input Row -->
+          <form id="terminal-form" class="px-4 py-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+            <span class="text-blue-400 font-bold">aaditya@jecrc:~$</span>
+            <input 
+              id="terminal-input" 
+              type="text" 
+              class="flex-1 bg-transparent text-white focus:outline-none placeholder-slate-600 font-mono text-xs" 
+              placeholder="type 'help' or any command..."
+              autocomplete="off" 
+              spellcheck="false"
+            />
+            <button type="submit" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded font-mono text-[11px] transition-colors">
+              EXECUTE
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 08. SECTION 05 — LET'S CONNECT (CONTACT) -->
+    <section id="contact" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-16">
+          <div class="flex items-center gap-2 font-mono text-xs text-blue-400 mb-3 tracking-widest uppercase">
+            <span class="w-6 h-[1px] bg-blue-500"></span>
+            <span>05 — LET'S CONNECT</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+            Open for Academic & Tech Discussions
+          </h2>
+          <p class="text-slate-400 text-base">
+            Whether you want to discuss Artificial Intelligence, share learning resources, or collaborate on student projects, I'd love to connect.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left: Contact Details (Strict Placeholders) -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+              <span class="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-4">DIRECT CONTACT (PLACEHOLDERS)</span>
+              
+              <div class="space-y-4">
+                <!-- Email -->
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-mono text-slate-500">EMAIL [PLACEHOLDER]</div>
+                    <a href="mailto:your.email@example.com" class="text-sm font-medium text-white hover:text-blue-400 transition-colors">
+                      your.email@example.com
+                    </a>
+                    <div class="text-[11px] text-slate-500 mt-0.5">Replace with your real email in data.js</div>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-mono text-slate-500">PHONE [PLACEHOLDER]</div>
+                    <span class="text-sm font-medium text-white">
+                      +91 XXXXX XXXXX
+                    </span>
+                    <div class="text-[11px] text-slate-500 mt-0.5">Replace with your phone number in data.js</div>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-mono text-slate-500">LOCATION</div>
+                    <span class="text-sm font-medium text-white">
+                      Jaipur, Rajasthan, India
+                    </span>
+                    <div class="text-[11px] text-slate-500 mt-0.5">JECRC University Campus</div>
+                  </div>
+                </div>
+
+                <!-- GitHub Profile -->
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-xs font-mono text-slate-500">GITHUB</div>
+                    <a href="https://github.com/aadityamathur23-sketch" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-white hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group">
+                      <span>aadityamathur23-sketch</span>
+                      <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    <div class="text-[11px] text-slate-500 mt-0.5">Explore code repositories & AI experiments</div>
+                  </div>
+                </div>
+
+                <!-- LinkedIn Profile -->
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-xs font-mono text-slate-500">LINKEDIN</div>
+                    <a href="https://www.linkedin.com/in/aaditya-mathur-6a6b90411/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-white hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group">
+                      <span>aaditya-mathur-6a6b90411</span>
+                      <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    <div class="text-[11px] text-slate-500 mt-0.5">Connect for tech collaborations & networking</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- College & Peer Note -->
+            <div class="p-4 rounded-xl bg-blue-950/30 border border-blue-900/40 text-xs text-blue-300 leading-relaxed">
+              <strong>College & Tech Inquiries:</strong> If you are also a student at JECRC University or interested in AI learning groups, feel free to drop a message!
+            </div>
+
+            <!-- Botpress Personal AI Assistant Card -->
+            <div class="p-4 rounded-xl bg-gradient-to-r from-blue-950/40 via-slate-900/90 to-slate-900 border border-blue-500/30 text-xs text-slate-300 leading-relaxed flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-white flex items-center gap-1.5">
+                    <span>Ask My Personal AI Chatbot</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">Trained to answer questions about my skills, projects & background.</div>
+                </div>
+              </div>
+              <button type="button" onclick="triggerBotpressChat()" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-[11px] font-semibold transition-all shrink-0 shadow-[0_0_12px_rgba(37,99,235,0.3)]">
+                Chat Now
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right: Interactive Contact Form with Validation & Feedback States -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/70 border border-slate-800 shadow-xl backdrop-blur-sm">
+              <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+              <p class="text-xs text-slate-400 mb-6">Fill out the form below. Includes simulated instant validation & dispatch feedback.</p>
+
+              <!-- Simulated Alert Container -->
+              <div id="form-alert" class="hidden mb-6 p-4 rounded-xl text-xs font-mono"></div>
+
+              <form id="contact-form" class="space-y-5" novalidate>
+                
+                <!-- Name Field -->
+                <div class="relative">
+                  <label for="contact-name" class="block text-xs font-mono text-slate-400 uppercase mb-1.5">
+                    Your Name <span class="text-blue-400">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    name="name" 
+                    required 
+                    placeholder="e.g. Alex Sharma" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm transition-all"
+                  />
+                  <div class="error-text text-red-400 text-[11px] font-mono mt-1 hidden">Please provide your name.</div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="relative">
+                  <label for="contact-email" class="block text-xs font-mono text-slate-400 uppercase mb-1.5">
+                    Your Email <span class="text-blue-400">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    name="email" 
+                    required 
+                    placeholder="e.g. alex@example.com" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm transition-all"
+                  />
+                  <div class="error-text text-red-400 text-[11px] font-mono mt-1 hidden">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="relative">
+                  <label for="contact-message" class="block text-xs font-mono text-slate-400 uppercase mb-1.5">
+                    Message <span class="text-blue-400">*</span>
+                  </label>
+                  <textarea 
+                    id="contact-message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Write your note, idea, or tech inquiry..." 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm transition-all resize-none"
+                  ></textarea>
+                  <div class="error-text text-red-400 text-[11px] font-mono mt-1 hidden">Please enter a message before sending.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  id="contact-submit-btn" 
+                  type="submit" 
+                  class="magnetic-btn w-full py-3.5 px-6 rounded-xl font-mono text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all flex items-center justify-center gap-2 group"
+                >
+                  <span id="btn-text">Send Message</span>
+                  <svg id="btn-icon" class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  
+                  <!-- Loading Spinner -->
+                  <svg id="btn-spinner" class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24" fill="none">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                  </svg>
+                </button>
+
+                <p class="text-[11px] text-slate-500 text-center font-mono">
+                  Note: Form interaction is simulated for frontend demo. Easily connect Formspree or EmailJS in <code class="text-blue-400">main.js</code>.
+                </p>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 09. MINIMAL FOOTER -->
+  <footer class="py-12 border-t border-slate-800/90 bg-[#06080d] text-slate-400 text-sm font-mono relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        
+        <div>
+          <div class="text-base font-bold text-white tracking-tight">Aaditya Mathur</div>
+          <div class="text-xs text-slate-400 mt-0.5">B.Tech Student • AI Learner • Future Tech Enthusiast</div>
+        </div>
+
+        <!-- Footer Social Profiles -->
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/aadityamathur23-sketch" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-blue-500/50 hover:bg-slate-800/80 transition-all flex items-center gap-2 text-xs font-mono group" title="Aaditya Mathur on GitHub" aria-label="GitHub Profile">
+            <svg class="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aaditya-mathur-6a6b90411/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-blue-500/50 hover:bg-slate-800/80 transition-all flex items-center gap-2 text-xs font-mono group" title="Aaditya Mathur on LinkedIn" aria-label="LinkedIn Profile">
+            <svg class="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="text-center sm:text-right">
+          <div class="text-xs text-slate-300 font-medium italic">"Still learning. Still building. Still curious."</div>
+          <div class="text-[11px] text-slate-500 mt-1">Built with curiosity • © 2026 Aaditya Mathur</div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. SPECIAL INTERACTION: DRAGGABLE FLOATING PANEL ("DRAG ME") -->
+  <div id="drag-me-panel" class="fixed bottom-6 left-6 z-30 cursor-grab active:cursor-grabbing select-none" title="Drag me anywhere across the screen!">
+    <div class="p-3 rounded-xl bg-slate-900/90 border border-blue-500/50 shadow-[0_0_20px_rgba(56,189,248,0.25)] backdrop-blur-md flex items-center gap-2.5 font-mono text-xs text-blue-400 hover:border-blue-400 transition-colors">
+      <div class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
+      <span class="font-bold tracking-wider">DRAG ME</span>
+      <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+    </div>
+  </div>
+
+  <!-- 11. SKILL DETAIL MODAL DIALOG -->
+  <div id="skill-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden" role="dialog" aria-modal="true" aria-labelledby="modal-skill-title">
+    <div class="relative w-full max-w-lg p-6 sm:p-8 rounded-2xl bg-[#0b0f19] border border-blue-500/40 shadow-[0_0_50px_rgba(37,99,235,0.25)] text-slate-200">
+      
+      <!-- Close Button -->
+      <button id="close-modal-btn" type="button" class="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white bg-slate-900 border border-slate-800 transition-colors" aria-label="Close dialog">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div id="modal-skill-icon" class="w-10 h-10 rounded-xl bg-blue-950/80 border border-blue-800/80 flex items-center justify-center text-blue-400">
+          <!-- Icon injected dynamically -->
+        </div>
+        <div>
+          <span id="modal-skill-category" class="text-[10px] font-mono text-blue-400 tracking-widest uppercase">AI & INTELLIGENCE</span>
+          <h3 id="modal-skill-title" class="text-xl font-bold text-white">Skill Title</h3>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-sm leading-relaxed text-slate-300">
+        <div>
+          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Educational Concept:</span>
+          <p id="modal-skill-desc" class="text-slate-300 font-light"></p>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-400">
+          <span class="text-blue-400 font-semibold block mb-1">// FIRST-YEAR STUDENT PERSPECTIVE:</span>
+          <span id="modal-skill-note">Studying principles methodically, testing code examples, and building reproducible workflows.</span>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-end">
+        <button id="modal-ok-btn" type="button" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold transition-colors">
+          Got It
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Botpress Personal AI Chatbot -->
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/09/30/06/20260930065033-UHUIGHK5.js" defer></script>
+  <script>
+    // Global helper to trigger Botpress Webchat programmatically
+    function triggerBotpressChat() {
+      if (window.botpress && typeof window.botpress.open === 'function') {
+        window.botpress.open();
+      } else {
+        // Poll briefly until Botpress webchat initializes
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts++;
+          if (window.botpress && typeof window.botpress.open === 'function') {
+            window.botpress.open();
+            clearInterval(interval);
+          } else if (attempts > 10) {
+            clearInterval(interval);
+          }
+        }, 300);
+      }
+    }
+  </script>
+</body>
+</html>
